@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
       label: DataTypes.STRING,
       price_per_day: DataTypes.DOUBLE,
       status: DataTypes.ENUM("available", "rented", "not available"),
-      picture: DataTypes.STRING
+      picture: DataTypes.STRING,
+      product_type: DataTypes.STRING
     },
     {}
   );
