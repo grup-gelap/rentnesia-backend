@@ -17,7 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.ENUM('admin', 'customer')
   }, {});
   user.associate = function(models) {
-    // associations can be defined here
+    models.user.hasMany(models.item , {
+      foreignKey : "owner_id",
+      sourceKey : "id"
+    })
   };
   return user;
 };
