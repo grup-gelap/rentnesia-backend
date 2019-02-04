@@ -5,7 +5,6 @@ const UserController = require("../controllers/UserController");
 const ItemController = require("../controllers/ItemController");
 
 router.get("/", UserController.getUser);
-router.get("/item", ItemController.getAllItems);
 
 router
   .route("/:id")

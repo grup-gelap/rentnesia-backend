@@ -22,11 +22,14 @@ exports.loginUser = async (req, res) => {
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.user_type },
       process.env.JWT_SECRET,
-      { expiresIn: "7d" }
+      { expiresIn: "2d" }
     );
-    res
-      .status(200)
-      .json({ message: "You're logged in", name: user.first_name, token });
+    res.status(200).json({
+      message: "You're logged in",
+      id: user.id,
+      name: user.first_name,
+      token
+    });
   } catch (error) {
     console.log(error);
     res.status(400).json("error bangsat");
